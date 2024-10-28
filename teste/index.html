@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <div id="teste"></div>
 
     <script type="text/babel">
         class App extends React.Component {
@@ -19,7 +20,32 @@
         }
 
         ReactDOM.render(<App />, document.getElementById('root'))
+
+        function App2(props) {
+            return <h2>I am a {props.color} Car!</h2>
+        }
+
+        ReactDOM.render(<App2 color="red"/>, document.getElementById('teste'))
     </script>
-    
+
+    <!--
+    <script type="text/babel">
+        import React from 'react';
+        import ReactDOM from 'react-dom/client';
+
+        class Car extends React.Component {
+            constructor() {
+                super();
+                this.state = {color: "red"};
+            }
+            render() {
+                return <h2>I am a {this.state.color} Car!</h2>;
+            }
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Car />)
+    </script>
+-->
 </body>
 </html>

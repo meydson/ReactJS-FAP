@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+<body>
+    <!--
+    <script type="text/babel">
+   
+        class Car extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    brand: "Ford",
+                    model: "Mustange",
+                    color: "red",
+                    year: 1964
+                };
+            }
+            changeColor = () => {
+                this.setState({color: "Blue"});
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h1>My {this.state.brand}</h1>
+                        <p>
+                            It is a {this.state.color}
+                            {this.state.model}
+                            from {this.state.year}
+                        </p>
+                        <button type="button" onClick={this.changeColor}>changeColor</button>
+                    </div>
+                );
+            };
+    
+        }
+
+        ReactDOM.render(<Car/>)
+    </script>
+-->
+    <script type="text/babel">
+        class App extends React.Component {
+            render() {
+                return <h1>Hello World!</h1>
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'))
+
+        function App2(props) {
+            return <h2>I am a {props.color} Car!</h2>
+        }
+
+        ReactDOM.render(<App2 color="red"/>, document.getElementById('teste'))
+    </script>
+    
+</body>
+</html>
