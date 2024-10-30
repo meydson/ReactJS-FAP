@@ -20,50 +20,72 @@
             constructor(props)
             {
                 super(props);
+                alert("Construtor foi chamado!");
                 this.state = {
-                    nome : "Rafael",
-                    color: "Verde"
+                    nome : "Meydson",
+                    sobrenome: "Baracho",
+                    idade : 38
                 };
             }
 
             changeName = () => {
-                this.setState({nome: "Nunes"});
-            }
-
-            changeColor = () => {
-                if (this.state.color == "Verde") {
-                    this.setState({color: "Preto"});
+                if (this.state.nome == "Meydson") {
+                    this.setState({nome: "Baracho"});
+                    this.setState({sobrenome: "Meydson"});
                 } else {
-                    this.setState({color: "Verde"});
+                    this.setState({nome: "Meydson"});
+                    this.setState({sobrenome: "Baracho"});
                 }
             }
 
+            changeIdade = () => {
+                this.setState({ idade: this.state.idade + 1});
+            }
+
+            componentWillMount() {
+                alert("O componentWillMount foi chamado!");
+            }
+
+
+            static getDerivedStateFromProps(props, state) {
+                alert("o GetDerivedStateFromProps foi chamado");
+                return {live: props.live};
+            }
+
+
+            componentDidMount() {
+                alert("O componentDidMount foi chamado!");
+            }
+
             render() {
+                alert("O render foi chamado");
                 return (
                     < div >
                         <h1>
                              Meu nome é {this.state.nome}
                              <br/>
-                             Minha cor é {this.state.color}</h1>
+                             E meu sobrenome é {this.state.sobrenome}
+                             <br/>
+                             Eu tenho {this.state.idade}
+                             <br/>
+                             Estou vivo {this.props.live}
+                        </h1>
                         <button
-                        type="button"
-                        onClick={this.changeName}
-                        >Mudar nome</button>
+                            type="button"
+                            onClick={this.changeName}
+                            >Mudar nome
+                        </button>
                         <br/>
                         <br/>
                         Adicione um Novo nome: <input type="text" value={this.state.nome} onChange={element => this.setState({ nome: element.target.value })} />
                         <br/>
-                        <button
-                        type="button"
-                        onClick={this.changeColor}
-                        >Mudar cor</button>
-                        <br/>
+                        <button type="button" onClick={this.changeIdade}>Aniversário</button>
                     </div >
                 );
             }
         }
 
-        ReactDOM.render(<UserName color="Azul"/>, document.getElementById('root'))
+        ReactDOM.render(<UserName live = "true"/>, document.getElementById('root'))
 
     </script>
 </body>
