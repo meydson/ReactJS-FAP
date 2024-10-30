@@ -52,9 +52,21 @@
                 return {live: props.live};
             }
 
+            shouldComponentUpdate() {
+                alert("O shouldComponentUpdate foi chamado");
+                return true;
+            }
 
             componentDidMount() {
                 alert("O componentDidMount foi chamado!");
+            }
+
+            getSnapshotBeforeUpdate(prevProps, prevState) {
+                alert("o getSnapshotBeforeUpdate foi chamado "+prevProps.live+" "+prevState.nome+" "+prevState.idade)
+            }
+
+            componentDidUpdate() {
+                alert("o componentDidUpdate foi chamado");
             }
 
             render() {
