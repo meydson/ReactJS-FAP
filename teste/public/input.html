@@ -21,12 +21,21 @@
             {
                 super(props);
                 this.state = {
-                    nome : "Rafael"
+                    nome : "Rafael",
+                    color: "Verde"
                 };
             }
 
             changeName = () => {
                 this.setState({nome: "Nunes"});
+            }
+
+            changeColor = () => {
+                if (this.state.color == "Verde") {
+                    this.setState({color: "Preto"});
+                } else {
+                    this.setState({color: "Verde"});
+                }
             }
 
             render() {
@@ -35,7 +44,7 @@
                         <h1>
                              Meu nome é {this.state.nome}
                              <br/>
-                             Minha cor é {this.props.color}</h1>
+                             Minha cor é {this.state.color}</h1>
                         <button
                         type="button"
                         onClick={this.changeName}
@@ -43,13 +52,18 @@
                         <br/>
                         <br/>
                         Adicione um Novo nome: <input type="text" value={this.state.nome} onChange={element => this.setState({ nome: element.target.value })} />
-                        
+                        <br/>
+                        <button
+                        type="button"
+                        onClick={this.changeColor}
+                        >Mudar cor</button>
+                        <br/>
                     </div >
                 );
             }
         }
 
-        ReactDOM.render(<UserName color = "Amarelo"/>, document.getElementById('root'))
+        ReactDOM.render(<UserName color="Azul"/>, document.getElementById('root'))
 
     </script>
 </body>
