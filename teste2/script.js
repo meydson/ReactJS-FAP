@@ -28,7 +28,8 @@ function consultarCEP() {
                     <strong>Endereço:</strong> ${data.logradouro || "Não disponível"}<br>
                     <strong>Bairro:</strong> ${data.bairro || "Não disponível"}<br>
                     <strong>Cidade:</strong> ${data.localidade || "Não disponível"}<br>
-                    <strong>Estado:</strong> ${data.uf || "Não disponível"}
+                    <strong>Estado:</strong> ${data.uf || "Não disponível"}<br>
+                    <strong>Região:</strong> ${data.regiao || "Não disponível"}
                 `;
             }
         })
