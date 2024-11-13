@@ -24,6 +24,7 @@
         const myStyle = {
             color: "red",
             backgroundColor: "yellow",
+            backgroundColor: "yellow",
             justifyContent: "center",
             padding: "20px",
             marginTop: "30px"
@@ -124,10 +125,7 @@
                     <div>
                         {MyHeader}
                         <h1 style={{color: this.state.favoriteColor}}>My favorite color is {this.state.favoriteColor}</h1>
-                            <button
-                            type="button"
-                            onClick={this.changeColor}
-                            >Mudar cor</button>
+                            <button type="button" onClick={this.changeColor}>Mudar cor</button>
                             <button
                             type="button"
                             onClick={this.changeVisibilidade}

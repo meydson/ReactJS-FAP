@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Consulta CEP</title>
+        
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+        <script src="./script.js"></script>
+        <link rel="stylesheet" href="./style2.css">
+    
+    </head>
+    
+    <body>
+        <div id="root"></div>
+        
+        <script type="text/babel">
+                
+        const myStyle = {
+            color: "red",
+            backgroundColor: "yellow",
+            backgroundColor: "yellow",
+            justifyContent: "center",
+            padding: "20px",
+            marginTop: "30px"
+        };
+
+        class Header extends React.Component {
+            render() {
+                return (
+                        <div className="container">
+                            <h1>Consulta de Endereço pelo CEP</h1>
+                            <label for="cep">Digite o CEP:</label>
+                            <input type="text" id="cep" placeholder="Ex: 01001000" maxlength="8"></input>
+                            <button type="button" onClick={consultarCEP}>Buscar Endereço</button>
+                            <div id="result" class="result"></div>
+                        </div>    
+                );
+            }
+
+   
+        }
+
+        ReactDOM.render(<Header/>, document.getElementById('root'))
+
+    </script>
+</body>
+
+</html>
